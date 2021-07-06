@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="ParametersThroughXML">
+
+		<parameter name="confBeforeParameter"
+			value="confBeforeParameter" />
+		<parameter name="testParameters1" value="testParameters1" />
+		<parameter name="testParameters2" value="testParameters2" />
+		<parameter name="confAfterParameter"
+			value="confAfterParameter" />
+
+
+		<classes>
+			<class name="ParameterizationTestNG.ParametersThroughXML" />
+			<class
+				name="ParameterizationTestNG.ParametersExampleAtClonstructor" />
+			<class name="ParameterizationTestNG.ParametersAtMethodLevel">
+
+				<methods>
+					<!-- Including individual method -->
+					<include name="testMethod1"></include>
+					<!-- Passing parameters for first method -->
+					<parameter name="testParameters1" value="testParameters 1" />
+					<parameter name="testParameters2" value="testParameters 2" />
+					
+					<!-- Including another method -->
+					<include name="testMethod2">
+					</include>
+					
+					<!-- Passing parameters for second method -->
+					<parameter name="testParameters3" value="testParameters 3" />
+					<parameter name="testParameters4" value="testParameters 4" />
+				</methods>
+			</class>
+
+		</classes>
+
+
+	</test> <!-- ParametersThroughXML -->
+</suite> <!-- Suite -->
